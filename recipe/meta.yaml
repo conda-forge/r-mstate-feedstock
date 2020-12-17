@@ -31,12 +31,22 @@ requirements:
   host:
     - r-base
     - r-rcolorbrewer
+    - r-data.table
+    - r-lattice
+    - r-magrittr
+    - r-rlang
     - r-survival >=3.1
+    - r-viridis
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
     - r-rcolorbrewer
+    - r-data.table
+    - r-lattice
+    - r-magrittr
+    - r-rlang
     - r-survival >=3.1
+    - r-viridis
 
 test:
   commands:
