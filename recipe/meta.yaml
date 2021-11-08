@@ -1,4 +1,4 @@
-{% set version = "0.3.1" %}
+{% set version = "0.3.2" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/mstate_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/mstate/mstate_{{ version }}.tar.gz
-  sha256: d1e04ce0fc274cd3c3ec3373b1a5523e6331706ef9d4a0a3b3cb2278ddb92386
+  sha256: 3c473dff6854e31cdbdaf79f8fe7eaf97119b01a581874a894b283555afe8d14
 
 build:
   merge_build_host: true  # [win]
