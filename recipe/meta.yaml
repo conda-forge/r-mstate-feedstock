@@ -1,4 +1,4 @@
-{% set version = "0.3.2" %}
+{% set version = "0.3.3" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/mstate_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/mstate/mstate_{{ version }}.tar.gz
-  sha256: 3c473dff6854e31cdbdaf79f8fe7eaf97119b01a581874a894b283555afe8d14
+  sha256: 8533da39c3ebfe6878e18bb30a3ade0f9be309b06e8d95617c308896ae57ae6f
 
 build:
   merge_build_host: true  # [win]
-  number: 2
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -22,7 +22,9 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}              # [not win]
+    - {{ stdlib("c") }}                # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
+    - {{ stdlib("m2w64_c") }}          # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
